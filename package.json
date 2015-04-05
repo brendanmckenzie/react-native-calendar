@@ -1,0 +1,28 @@
+{
+  "name": "react-native-calendar",
+  "version": "0.0.1",
+  "description": "Calendar component for React native",
+  "homepage": "https://github.com/brendanmckenzie/react-native-calendar",
+  "author": {
+    "name": "Brendan McKenzie",
+    "email": "brendan@mckenzie.io",
+    "url": "https://github.com/brendanmckenzie"
+  },
+  "main": "./calendar.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendanmckenzie/react-native-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brendanmckenzie/react-native-calendar/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "moment": "^2.9.0",
+    "react-native": "^0.3.4"
+  }
+}
