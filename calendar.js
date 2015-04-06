@@ -51,10 +51,10 @@
 
       return (
         <View>
-          <View style={{flexDirection: 'row', alignItems: 'center', width: 5*50}}>
-            <TouchableOpacity style={{flex: 0}} onPress={this._prevMonth}><Text style={{fontFamily: 'Open Sans'}}>Prev</Text></TouchableOpacity>
-            <Text style={styles.title}>{month.format('MMMM')}</Text>
-            <TouchableOpacity style={{flex: 0}} onPress={this._nextMonth}><Text style={{fontFamily: 'Open Sans'}}>Next</Text></TouchableOpacity>
+          <View style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
+            <TouchableOpacity style={{flex: 0.1}} onPress={this._prevMonth}><Text style={{fontFamily: 'Open Sans'}}>Prev</Text></TouchableOpacity>
+            <Text style={[styles.title, {flex: 0.8}]}>{month.format('MMMM')}</Text>
+            <TouchableOpacity style={{flex: 0.1}} onPress={this._nextMonth}><Text style={{fontFamily: 'Open Sans'}}>Next</Text></TouchableOpacity>
           </View>
 
           <View style={styles.dayList}>
@@ -85,7 +85,9 @@
     },
 
     _selectDate: function (date) {
-      console.log(date);
+      if (this.props.onDateSelected) {
+        this.props.onDateSelected(date);
+      }
     }
   });
 
@@ -103,7 +105,7 @@
     dayListDay: {
       fontFamily: 'Open Sans',
       padding: 5,
-      width: 40,
+      flex: 1,
       textAlign: 'center'
     }
   });
