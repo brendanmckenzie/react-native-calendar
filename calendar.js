@@ -41,7 +41,10 @@
         var days = [];
         for (var j = 0; j < 7; j++) {
           var currentDay = moment(firstDay.add({days: 1}));
-          days.push((<TouchableOpacity onPress={this._selectDate.bind(this, currentDay)}><Text style={styles.dayListDay}>{currentDay.date()}</Text></TouchableOpacity>));
+          days.push((
+            <TouchableOpacity onPress={this._selectDate.bind(this, currentDay)}>
+              <Text style={[styles.dayListDay, currentDay.isSame(this.props.currentDate, 'day') && styles.currentDay]}>{currentDay.date()}</Text>
+            </TouchableOpacity>));
         }
         weekRows.push((
           <View style={styles.dayList}>
@@ -107,6 +110,10 @@
       padding: 5,
       flex: 1,
       textAlign: 'center'
+    },
+    currentDay: {
+      backgroundColor: '#000',
+      color: '#fff'
     }
   });
 
